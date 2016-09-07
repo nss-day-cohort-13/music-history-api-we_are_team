@@ -1,0 +1,22 @@
+{
+  "name": "We_Are_Team",
+  "homepage": "https://github.com/nss-day-cohort-13/music-history-api-we_are_team",
+  "authors": [
+    "Keith <keithbradley1@msn.com>"
+  ],
+  "description": "Music_App",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}
