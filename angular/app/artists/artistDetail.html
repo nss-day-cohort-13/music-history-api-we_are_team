@@ -1,3 +1,6 @@
 <article>
   <h1>{{ artists.name }}</h1>
+  <input type="text" name="name" ng-model="artists.name">
+  <button ng-click="deleteArtist(artists.id)">Del</button>
+  <button ng-click="editArtist(artists)">Edit</button>
 </article>

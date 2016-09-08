@@ -1,7 +1,13 @@
 <h1>{{ title }}</h1>
 
 <ul>
-    <li ng-repeat="resource in artists">
+    <li ng-repeat="(key, resource) in artists">
       <a href="/#/artists/{{ resource.id }}">{{ resource.name }}</a>
+<!--       <button ng-click="deleteArtist(key, resource.id)">Del</button>
+      <button ng-click="editArtist(key, resource.id)">Edit</button> -->
     </li>
+
+    <input ng-model="newArtist" type="text" name="newArtist">
+    <button ng-click="addArtist(newArtist)">Add</button>
+
 </ul>

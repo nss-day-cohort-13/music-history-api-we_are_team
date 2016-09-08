@@ -22,4 +22,21 @@ angular.module("We_Are_Team")
         // ).then(
         //   $timeout //forces scope apply to DOM - reapply everything
         );
+
+      $scope.addArtist = (newArtist) => {
+        console.log(newArtist)
+          $http.post(`http://localhost:8000/artists/`, { name: newArtist})
+            .then(res => {
+              console.log("res artist: ", res );
+              $scope.artists.push(res.data)
+              $scope.newArtist = ""
+              $timeout()
+            });
+      };
+
     }]);
+
+
+
+
+
