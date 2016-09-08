@@ -38,6 +38,5 @@ angular.module("We_Are_Team")
           logError
         )
 
-
     }
   ]);
