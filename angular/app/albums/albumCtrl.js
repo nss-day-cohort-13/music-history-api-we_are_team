@@ -12,9 +12,10 @@ angular.module("We_Are_Team")
       RootFactory.getApiRoot()
         .then(
         root => {
-          $http.get(`${root.album}`)
+          $http.get(`${root.albums}`)
             .then(res => {
-              $scope.album = res.data
+              console.log("album res: ", res.data );
+              $scope.albums = res.data
             });
           $timeout();
         },

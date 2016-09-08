@@ -1,12 +1,12 @@
 angular.module('We_Are_Team')
   .config(($routeProvider) => {
     $routeProvider
-      .when("/album", {
+      .when("/albums", {
         controller: "AlbumCtrl",
-        templateUrl: "/app/album/album.html"
+        templateUrl: "/app/albums/albums.html"
       })
-      .when("/album/:albumId", {
+      .when("/albums/:albumId", {
         controller: "AlbumDetailCtrl",
-        templateUrl: "/app/album/albumDetail.html"
+        templateUrl: "/app/albums/albumDetail.html"
       })
   })
