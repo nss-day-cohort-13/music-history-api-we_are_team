@@ -3,5 +3,6 @@
   <ul>
     <li ng-repeat="resource in albums">
      <a href='/#/albums/{{ resource.id }}'>{{ resource.name }}</a>
+     <button ng-click='deleteAlbum(key, resource.id)'>Delete</button>
     </li>
   </ul>

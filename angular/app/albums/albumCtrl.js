@@ -23,4 +23,11 @@ angular.module("We_Are_Team")
         // ).then(
         //   $timeout //forces scope apply to DOM - reapply everything
         );
+      $scope.deleteAlbum = (key, albumId) => {
+        // console.log('albumId', albumId)
+        return $http.delete(`http://localhost:8000/albums/${albumId}/`)
+          .then((res) => {
+            $scope.albums.splice(key, 1)
+      })
+    }
     }]);
