@@ -1,5 +1,5 @@
 angular.module("We_Are_Team")
-  .controller('artistDetailCtrl', [
+  .controller('ArtistDetailCtrl', [
     '$scope',
     '$http',
     'RootFactory',
@@ -18,7 +18,7 @@ angular.module("We_Are_Team")
         )
         .then(
           empRes => {
-            $scope.artists = empRes.data;
+            $scope.artists = artistRes.data;
           },
           logError
         )

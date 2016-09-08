@@ -1,5 +1,5 @@
 angular.module("We_Are_Team")
-  .controller('artistCtrl',
+  .controller('ArtistCtrl',
   [
     '$scope',
     '$http',

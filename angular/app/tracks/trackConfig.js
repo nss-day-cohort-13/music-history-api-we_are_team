@@ -2,11 +2,11 @@ angular.module('We_Are_Team')
   .config($routeProvider => {
     $routeProvider
       .when('/tracks', {
-        controller: 'tracks.ctrl',
+        controller: 'TrackCtrl',
         templateUrl: '/app/tracks/tracks.html'
       })
       .when('/tracks/:trackId', {
-        controller: 'trackDetailCtrl',
+        controller: 'TrackDetailCtrl',
         templateUrl: '/app/tracks/trackDetail.html'
       })
   })
