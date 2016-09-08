@@ -12,6 +12,6 @@ angular.module('We_Are_Team', ['ngRoute'])
 )
 .filter('capitalize', () => {
   return (thingToChange) => {
-    thingToChange.charAt(0).toUpperCase() + thingToChange.slice(1)
+    return thingToChange.charAt(0).toUpperCase() + thingToChange.slice(1)
   }
 });
