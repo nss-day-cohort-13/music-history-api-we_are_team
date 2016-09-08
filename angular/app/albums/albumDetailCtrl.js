@@ -14,22 +14,25 @@ angular.module("We_Are_Team")
 
       RootFactory.getApiRoot()
         .then(root => {
-          return $http.get(root.animals + $routeParams.albumId);
+          return $http.get(root.albums + $routeParams.albumId + "/");
         },
           err => console.log("error", err)
         )
         .then(albumRes => {
+          console.log("album", albumRes);
           $scope.albums = albumRes.data;
-          return $http.get($scope.album.Artists);
+          return $http.get($scope.albums.artist);
         },
           err => console.log("error", err)
         )
         .then((artistRes) => {
-          $scope.artists = artistsRes.data;
+          $scope.artist = artistRes.data;
           $timeout();
         },
           err => console.log("error", err)
         )
     }
+
   ]);
+
 
