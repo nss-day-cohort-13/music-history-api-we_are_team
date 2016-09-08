@@ -23,26 +23,6 @@ angular.module("We_Are_Team")
         //   $timeout //forces scope apply to DOM - reapply everything
         );
 
-
-      $scope.deleteArtist = (key, artistId) => {
-        // console.log(trackId)
-        return $http.delete(`http://localhost:8000/artists/${artistId}/`)
-        .then((res) => {
-          $scope.artists.splice(key, 1)
-        })
-      };
-
-
-      $scope.editArtist = (key, artistId) => {
-        // console.log(trackId)
-        return $http.put(`http://localhost:8000/artists/${artistId}/`)
-        .then((res) => {
-          console.log("res edit ", res );
-          // $scope.artists.splice(key, 1)
-        })
-      };
-
-
       $scope.addArtist = (newArtist) => {
         console.log(newArtist)
           $http.post(`http://localhost:8000/artists/`, { name: newArtist})
