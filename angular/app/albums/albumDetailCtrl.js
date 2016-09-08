@@ -30,4 +30,6 @@ angular.module("We_Are_Team")
         },
           err => console.log("error", err)
         )
+    }
+  ]);
 

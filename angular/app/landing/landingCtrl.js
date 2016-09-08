@@ -12,6 +12,7 @@ angular.module("We_Are_Team")
       RootFactory.getApiRoot()
         .then(
           res => {
+            console.log("res: ", res);
             $scope.apiRoot = res;
             $timeout();
           },

@@ -8,6 +8,7 @@
   </head>
   <body>
     <div ng-app='We_Are_Team'>
+    <div ng-include="'app/landing/landing.html'" ng-controller="LandingCtrl"></div>
       <div ng-view>
 
       </div>
@@ -20,7 +21,7 @@
     <script src="app/landing/landingConfig.js"></script>
     <script src="app/landing/landingCtrl.js"></script>
 
-    <script src="app/artists/artistsCtrl.js"></script>
+    <script src="app/artists/artistCtrl.js"></script>
     <script src="app/artists/artistDetailCtrl.js"></script>
     <script src="app/artists/artistConfig.js"></script>
 
