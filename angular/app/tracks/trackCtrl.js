@@ -22,4 +22,12 @@ angular.module("We_Are_Team")
         // ).then(
         //   $timeout //forces scope apply to DOM - reapply everything
         );
+
+        $scope.deleteTrack = (key, trackId) => {
+            // console.log(trackId)
+            return $http.delete(`http://localhost:8000/tracks/${trackId}/`)
+                .then((res) => {
+                    $scope.tracks.splice(key, 1)
+                })
+        }
     }]);
