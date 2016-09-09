@@ -1,5 +1,5 @@
 angular.module("We_Are_Team")
-  .controller('trackDetailCtrl', [
+  .controller('TrackDetailCtrl', [
     '$scope',
     '$http',
     'RootFactory',
@@ -25,6 +25,7 @@ angular.module("We_Are_Team")
         )
         .then(
           trackRes => {
+            console.log("trackRes 1: ", trackRes);
             $scope.tracks = trackRes.data;
             return $http.get($scope.tracks.albums);
           },
@@ -32,6 +33,7 @@ angular.module("We_Are_Team")
         )
         .then(
           trackRes => {
+            console.log("trackRes: ", trackRes);
             $scope.tracks = trackRes.data;
             $timeout();
           },
