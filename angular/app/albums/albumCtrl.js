@@ -28,10 +28,10 @@ angular.module("We_Are_Team")
         //   $timeout //forces scope apply to DOM - reapply everything
         );
 
-    $scope.addAlbum = (newAlbum, selectedArtist) => {
+    $scope.addAlbum = (newAlbum) => {
       console.log(newAlbum)
-      console.log("2nd item", selectedArtist)
-        $http.post(`http://localhost:8000/albums/`, { 'name': newAlbum, 'artist': selectedArtist}, {"Content-Type": "application/json"})
+      console.log("2nd item", $scope.selectedArtist)
+        $http.post(`http://localhost:8000/albums/`, { "name": newAlbum, "artist": $scope.selectedArtist })
           .then(res => {
             console.log("res album: ", res );
             $scope.albums.push(res.data)
