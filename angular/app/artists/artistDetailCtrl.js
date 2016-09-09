@@ -9,20 +9,22 @@ angular.module("We_Are_Team")
     function ($scope, $http, RootFactory, $timeout, $location, $routeParams) {
       $scope.title = "I'm the artists detail page"
       $scope.artists = null;
+      $scope.albums = null;
 
       let logError = (err) => console.log("error", err);
 
       RootFactory.getApiRoot()
-        .then(
-          root => $http.get(root.artists + $routeParams.artistId + '/'),
+        .then(root => $http.get(root.artists + $routeParams.artistId + '/'),
           logError
         )
-        .then(
-          artistRes => {
-            $scope.artists = artistRes.data;
+        .then( artistRes => {
+          console.log("artistRes: before", artistRes.data );
+          $scope.artists = artistRes.data;
           },
           logError
         )
+
+
 
         $scope.deleteArtist = (artistId) => {
           // console.log(trackId)

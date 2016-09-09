@@ -1,7 +1,7 @@
 <article>
   <h1>{{albums.name}}</h1>
-  <p>Album Name: {{ album.name }} <input type="text" name="name" ng-model="albums.name">
+  <p class="albumDetail-p">Album Name: {{ album.name }} <input type="text" name="name" ng-model="albums.name">
   <button ng-click='deleteAlbum(key, resource.id)'>Delete</button>
   <button ng-click="editAlbum(albums)">Edit</button></p>
-  <p>Album created by: {{ artist.name }}</p>
+  <p class="albumDetail-p">Album created by: {{ artist.name }}</p>
 </article>

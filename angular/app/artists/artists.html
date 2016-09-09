@@ -1,9 +1,18 @@
-<h1>{{ title }}</h1>
-
-<ul>
-    <li ng-repeat="(key, resource) in artists">
-      <a href="/#/artists/{{ resource.id }}">{{ resource.name }}</a>
-    </li>
-    <input ng-model="newArtist" type="text" name="newArtist">
-    <button ng-click="addArtist(newArtist)">Add</button>
-</ul>
+<div class="container-fluid">
+  <div class="row">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="row artist-row">
+    <ul class="artist-ul">
+      <li ng-repeat="(key, resource) in artists" class="artist-li">
+        <a href="/#/artists/{{ resource.id }}" class="artist-a">{{ resource.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="row artist-row">
+    <div class="col-sm-12">
+      <input ng-model="newArtist" type="text" name="newArtist">
+      <div class="cirlce-div" ng-click="addArtist(newArtist)"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
+    </div>
+  </div>
+</div>

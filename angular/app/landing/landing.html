@@ -1,7 +1,19 @@
-<h1>{{title}}</h1>
+<nav class="navbar navbar-default nav-body">
+  <div class="container-fluid">
+    <div class="row">
 
-  <ul>
-    <li ng-repeat="(key, resource) in apiRoot">
-     <a href='/#/{{ key }}'>{{ key | capitalize }} </a>
-    </li>
-  </ul>
+      <div class="col-sm-3">
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-music" aria-hidden="true"></span></a>
+      </div>
+
+      <div class="col-sm-9 link-container">
+        <ul class="link-container">
+          <li ng-repeat="(key, resource) in apiRoot" class="nav-list">
+           <a class="nav-links" href='/#/{{ key }}'>{{ key | capitalize }} </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>

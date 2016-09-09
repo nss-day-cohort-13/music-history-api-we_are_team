@@ -6,7 +6,7 @@ angular.module("We_Are_Team")
     'RootFactory',
     '$timeout',
     function($scope, $http, RootFactory, $timeout){
-      $scope.title = "I'm the album page";
+      $scope.title = "Albums";
       $scope.apiRoot = null;
 
       RootFactory.getApiRoot()

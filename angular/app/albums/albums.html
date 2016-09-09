@@ -1,9 +1,28 @@
-<h1>{{title}}</h1>
+<div class="container-fluid">
+  <div class="row">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="row album-row">
+    <ul class="album-ul">
+      <li ng-repeat="(key, resource) in albums" class="album-li">
+       <a href="/#/albums/{{ resource.id }}"" class="album-a">{{ resource.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="row album-row">
+    <div class="col-sm-12">
+      <input ng-model="newAlbum" type="text" name="newAlbum">
+      <div class="cirlce-div" ng-click="addAlbum(newAlbum)"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
+    </div>
+  </div>
+</div>
 
-<ul>
-  <li ng-repeat="(key, resource) in albums">
-   <a href='/#/albums/{{ resource.id }}'>{{ resource.name }}</a>
-  </li>
+
+
+
+
+
+  <!-- OLD CODE -->
   <!-- <h3>Create a new Album: </h3> -->
   <!-- <label for="singleSelect"> Artist </label><br> -->
   <!-- <select name="singleSelect" ng-model="selectedArtist">
@@ -11,4 +30,3 @@
   </select>
   <input ng-model="newAlbum" type="text" name="newAlbum">
   <button ng-click="addAlbum(newAlbum, resource.id)">Add</button> -->
-</ul>

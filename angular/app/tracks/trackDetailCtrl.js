@@ -11,6 +11,7 @@ angular.module("We_Are_Team")
           $scope.title = "I'm the tracks page";
           $scope.apiRoot = null;
           $scope.artists = null;
+          $scope.tracks = null;
 
           RootFactory.getApiRoot()
             .then(root => {
@@ -33,11 +34,34 @@ angular.module("We_Are_Team")
               err => console.log("error", err)
             )
 
+      RootFactory.getApiRoot()
+        .then(
+          root => $http.get(root.tracks + $routeParams.trackId),
+          logError
+        )
+        .then(
+          trackRes => {
+            console.log("trackRes 1: ", trackRes);
+            $scope.tracks = trackRes.data;
+            return $http.get($scope.tracks.albums);
+          },
+          logError
+        )
+        .then(
+          trackRes => {
+            console.log("trackRes: ", trackRes);
+            $scope.tracks = trackRes.data;
+            $timeout();
+          },
+          logError
+        )
+
         $scope.deleteTrack = (trackId) => {
           // console.log(trackId)
           return $http.delete(`http://localhost:8000/tracks/${trackId}/`)
           .then(() => $location.path("/tracks/"))
         };
+
 
         $scope.editTrack = (track) => {
           // console.log(track)
