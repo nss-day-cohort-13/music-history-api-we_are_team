@@ -5,7 +5,7 @@
   <div class="row album-row">
     <ul class="album-ul">
       <li ng-repeat="(key, resource) in albums" class="album-li">
-       <a href="/#/albums/{{ resource.id }}"" class="album-a">{{ resource.name }}</a>
+       <a href="/#/albums/{{ resource.id }}" class="album-a">{{ resource.name }}</a>
       </li>
     </ul>
   </div>
@@ -22,11 +22,10 @@
 
 
 
-  <!-- OLD CODE -->
-  <!-- <h3>Create a new Album: </h3> -->
-  <!-- <label for="singleSelect"> Artist </label><br> -->
-  <!-- <select name="singleSelect" ng-model="selectedArtist">
-    <option ng-repeat="resource in artists" value="{{resource}}">{{ resource.name }}</option>
+  <h3>Create a new Album: </h3>
+  <label for="singleSelect"> Artist </label><br>
+  <select name="singleSelect" ng-model="selectedArtist">
+    <option ng-repeat="resource in artists" value="{{resource.url}}">{{ resource.name }}</option>
   </select>
   <input ng-model="newAlbum" type="text" name="newAlbum">
-  <button ng-click="addAlbum(newAlbum, resource.id)">Add</button> -->
+  <button ng-click="addAlbum(newAlbum)">Add</button>
