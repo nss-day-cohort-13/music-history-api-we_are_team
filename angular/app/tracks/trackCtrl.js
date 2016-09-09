@@ -15,7 +15,12 @@ angular.module("We_Are_Team")
           $http.get(`${root.tracks}`)
             .then(res => {
               $scope.tracks = res.data
-            });
+            })
+            $http.get(`${root.albums}`)
+              .then(res => {
+                console.log("album res: ", res.data );
+                $scope.albums = res.data
+              });
           $timeout();
         },
         err => console.log('error', err)

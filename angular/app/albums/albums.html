@@ -4,11 +4,11 @@
   <li ng-repeat="(key, resource) in albums">
    <a href='/#/albums/{{ resource.id }}'>{{ resource.name }}</a>
   </li>
-  <h3>Create a new Album: </h3>
-  <label for="singleSelect"> Artist </label><br>
-  <select name="singleSelect" ng-model="selectedArtist">
-    <option ng-repeat="(key, resource) in artists" value="">{{ resource.name }}</option>
+  <!-- <h3>Create a new Album: </h3> -->
+  <!-- <label for="singleSelect"> Artist </label><br> -->
+  <!-- <select name="singleSelect" ng-model="selectedArtist">
+    <option ng-repeat="resource in artists" value="{{resource}}">{{ resource.name }}</option>
   </select>
   <input ng-model="newAlbum" type="text" name="newAlbum">
-  <button ng-click="addAlbum(newAlbum, resource.id)">Add</button>
+  <button ng-click="addAlbum(newAlbum, resource.id)">Add</button> -->
 </ul>

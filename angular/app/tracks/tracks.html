@@ -2,7 +2,7 @@
 
   <ul>
     <li ng-repeat="(key, resource) in tracks">
-     <a href=''>{{ resource.name }}</a>
-     <button ng-click='deleteTrack(key, resource.id)'>Delete</button>
+     <a href="/#/tracks/{{ resource.id }}">{{ resource.name }}</a>
+     <!-- <button ng-click='deleteTrack(key, resource.id)'>Delete</button> -->
     </li>
   </ul>

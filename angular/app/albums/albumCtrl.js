@@ -30,6 +30,7 @@ angular.module("We_Are_Team")
 
     $scope.addAlbum = (newAlbum, selectedArtist) => {
       console.log(newAlbum)
+      console.log("2nd item", selectedArtist)
         $http.post(`http://localhost:8000/albums/`, { 'name': newAlbum, 'artist': selectedArtist}, {"Content-Type": "application/json"})
           .then(res => {
             console.log("res album: ", res );
