@@ -1,8 +1,7 @@
 <article>
-
   <h1>{{tracks.name}}</h1>
-  <section>
-    These tracks are on {{ tracks.albums }}
-  </section>
+  <p>Track Name: {{ track.name }} <input type="text" name="name" ng-model="tracks.name">
+  <button ng-click='deleteTrack(key, resource.id)'>Delete</button>
+  <button ng-click="editTrack(tracks)">Edit</button></p>
+  <p>Album: {{ album.name }}</p>
 </article>
-

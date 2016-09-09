@@ -26,13 +26,25 @@ angular.module("We_Are_Team")
           err => console.log("error", err)
         )
         .then((artistRes) => {
+            console.log("artist res", artistRes)
           $scope.artist = artistRes.data;
           $timeout();
         },
           err => console.log("error", err)
         )
-    }
+
+        $scope.deleteAlbum = (albumId) => {
+          // console.log(trackId)
+          return $http.delete(`http://localhost:8000/albums/${albumId}/`)
+          .then(() => $location.path("/albums/"))
+        };
+
+        $scope.editAlbum = (album) => {
+          // console.log(album)
+          return $http.put(`http://localhost:8000/albums/${album.id}/`, album)
+          .then(() => $location.path("/albums/"))
+        };
+      }
+
 
   ]);
-
-
