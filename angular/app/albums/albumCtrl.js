@@ -17,17 +17,26 @@ angular.module("We_Are_Team")
               console.log("album res: ", res.data );
               $scope.albums = res.data
             });
+            $http.get(`${root.artists}`)
+              .then(res => {
+                $scope.artists = res.data
+              });
           $timeout();
         },
         err => console.log('error', err)
         // ).then(
         //   $timeout //forces scope apply to DOM - reapply everything
         );
-      $scope.deleteAlbum = (key, albumId) => {
-        // console.log('albumId', albumId)
-        return $http.delete(`http://localhost:8000/albums/${albumId}/`)
-          .then((res) => {
-            $scope.albums.splice(key, 1)
-      })
-    }
+
+    $scope.addAlbum = (newAlbum, selectedArtist) => {
+      console.log(newAlbum)
+        $http.post(`http://localhost:8000/albums/`, { 'name': newAlbum, 'artist': selectedArtist}, {"Content-Type": "application/json"})
+          .then(res => {
+            console.log("res album: ", res );
+            $scope.albums.push(res.data)
+            $scope.selectedArtist = ""
+            $scope.newAlbum = ""
+            $timeout()
+          });
+    };
     }]);
