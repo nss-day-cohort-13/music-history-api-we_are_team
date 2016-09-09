@@ -115,9 +115,48 @@ a {
 /*********************************
         ARTIST DETAIL STYLES
 *********************************/
+.artistDetail-row {
+  text-align: center;
+}
+
+.artistDetail-ul {
+  padding: 0;
+}
+
+.artistDetail-li {
+  padding: 1em;
+}
+
+.artistDetail-a {
+  color: #bdcccc;
+  font-size: 1.3em;
+}
+
+.artistDetail-a:hover {
+  text-decoration: none;
+  font-size: 1.4em;
+  border-bottom: 1px solid #bdcccc;
+  color: #bdcccc;
+}
 
 
+.glyphicon-pencil, .glyphicon-trash {
+  color: #d34836;
+  font-size: 3.5em;
+  padding-top: .5em;
+}
 
+.glyphicon-pencil:hover {
+  color: #ffff00;
+  font-size: 4em;
+  cursor: pointer;
+}
+
+.glyphicon-trash:hover {
+  color: #ffff00;
+  font-size: 4em;
+  cursor: pointer;
+}
 
 
 
