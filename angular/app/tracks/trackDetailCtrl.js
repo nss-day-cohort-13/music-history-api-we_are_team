@@ -11,6 +11,7 @@ angular.module("We_Are_Team")
           $scope.title = "I'm the tracks page";
           $scope.apiRoot = null;
           $scope.artists = null;
+          $scope.tracks = null;
 
           RootFactory.getApiRoot()
             .then(root => {
