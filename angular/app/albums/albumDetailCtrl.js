@@ -6,8 +6,8 @@ angular.module("We_Are_Team")
     'RootFactory',
     '$timeout',
     '$routeParams',
-
-    function($scope, $http, RootFactory, $timeout, $routeParams){
+    '$location',
+    function($scope, $http, RootFactory, $timeout, $routeParams, $location){
       $scope.title = "I'm the albums page";
       $scope.apiRoot = null;
       $scope.artists = null;
@@ -34,7 +34,7 @@ angular.module("We_Are_Team")
         )
 
         $scope.deleteAlbum = (albumId) => {
-          // console.log(trackId)
+          console.log(albumId)
           return $http.delete(`http://localhost:8000/albums/${albumId}/`)
           .then(() => $location.path("/albums/"))
         };
