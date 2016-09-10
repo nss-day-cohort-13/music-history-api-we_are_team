@@ -21,12 +21,32 @@ angular.module("We_Are_Team")
                 console.log("album res: ", res.data );
                 $scope.albums = res.data
               });
+            $http.get(`${root.artists}`)
+              .then(res => {
+                console.log("artist res: ", res.data );
+                $scope.artists = res.data
+              });
           $timeout();
         },
         err => console.log('error', err)
-        // ).then(
-        //   $timeout //forces scope apply to DOM - reapply everything
         );
+
+
+
+
+      $scope.addTrack = (newTrack) => {
+        console.log(newTrack)
+        console.log("2nd item", $scope.selectedArtist, $scope.selectedAlbum)
+          $http.post(`http://localhost:8000/tracks/`, { "name": newTrack, "album": $scope.selectedAlbum,"artist": $scope.selectedArtist})
+            .then(res => {
+              console.log("res tracks: ", res );
+              $scope.tracks.push(res.data)
+              $scope.selectedArtist = ""
+              $scope.selectedAlbum = ""
+              $scope.newTrack = ""
+              $timeout()
+            });
+      };
 
         $scope.deleteTrack = (key, trackId) => {
             // console.log(trackId)

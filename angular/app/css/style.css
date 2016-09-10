@@ -62,12 +62,14 @@ a {
 
 .nav-links {
   color: #552624;
+  padding: 6px 7px 9px 10px;
 }
 
 .nav-links:hover {
+  border: 1px solid #d34836;
   text-decoration: none;
-  font-size: 1.2em;
-  border-bottom: 1px solid #552624;
+  background: #d34836;
+  color: #fff;
 }
 
 

@@ -6,8 +6,8 @@ angular.module("We_Are_Team")
         'RootFactory',
         '$timeout',
         '$routeParams',
-
-        function($scope, $http, RootFactory, $timeout, $routeParams){
+        '$location',
+        function($scope, $http, RootFactory, $timeout, $routeParams, $location){
           $scope.title = "I'm the tracks page";
           $scope.apiRoot = null;
           $scope.artists = null;
@@ -15,7 +15,7 @@ angular.module("We_Are_Team")
 
           RootFactory.getApiRoot()
             .then(root => {
-              return $http.get(root.albums + $routeParams.trackId + "/");
+              return $http.get(root.tracks + $routeParams.trackId + "/");
             },
               err => console.log("error", err)
             )
@@ -34,30 +34,8 @@ angular.module("We_Are_Team")
               err => console.log("error", err)
             )
 
-      RootFactory.getApiRoot()
-        .then(
-          root => $http.get(root.tracks + $routeParams.trackId),
-          logError
-        )
-        .then(
-          trackRes => {
-            console.log("trackRes 1: ", trackRes);
-            $scope.tracks = trackRes.data;
-            return $http.get($scope.tracks.albums);
-          },
-          logError
-        )
-        .then(
-          trackRes => {
-            console.log("trackRes: ", trackRes);
-            $scope.tracks = trackRes.data;
-            $timeout();
-          },
-          logError
-        )
-
         $scope.deleteTrack = (trackId) => {
-          // console.log(trackId)
+          console.log(trackId)
           return $http.delete(`http://localhost:8000/tracks/${trackId}/`)
           .then(() => $location.path("/tracks/"))
         };
@@ -70,3 +48,27 @@ angular.module("We_Are_Team")
         };
     }
   ]);
+
+
+
+  // RootFactory.getApiRoot()
+  //   .then(
+  //     root => $http.get(root.tracks + $routeParams.trackId),
+  //     err => console.log("error", err)
+  //   )
+  //   .then(
+  //     trackRes => {
+  //       console.log("trackRes 1: ", trackRes);
+  //       $scope.tracks = trackRes.data;
+  //       return $http.get($scope.tracks.albums);
+  //     },
+  //     err => console.log("error", err)
+  //   )
+  //   .then(
+  //     trackRes => {
+  //       console.log("trackRes: ", trackRes);
+  //       $scope.tracks = trackRes.data;
+  //       $timeout();
+  //     },
+  //     err => console.log("error", err)
+  //   )

@@ -11,19 +11,25 @@
   </div>
   <div class="row track-row">
     <div class="col-sm-12">
+
+      <label for="pickArtist"> Select Artist </label>
+      <select name="pickArtist" ng-model="selectedArtist">
+        <option ng-repeat="resource in artists"value="{{resource.url}}">{{ resource.name }}</option>
+      </select>
+
+      <label for="pickAlbum"> Select Album </label>
+      <select name="pickAlbum" ng-model="selectedAlbum">
+        <option ng-repeat="resource in albums"value="{{resource.url}}">{{ resource.name }}</option>
+      </select>
+
+      <label for="addTrack"> Add Track </label>
       <input ng-model="newTrack" type="text" name="newTrack">
       <div class="cirlce-div" ng-click="addTrack(newTrack)"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
+
     </div>
   </div>
 </div>
 
 
 
-<!-- <h1>{{title}}</h1>
 
-  <ul>
-    <li ng-repeat="(key, resource) in tracks">
-     <a href="/#/tracks/{{ resource.id }}">{{ resource.name }}</a>
-     <button ng-click='deleteTrack(key, resource.id)'>Delete</button> -->
-    <!-- </li> -->
-  <!-- </ul> --> -->
